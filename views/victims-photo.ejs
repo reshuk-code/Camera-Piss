@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Victim's Photos</title>
+</head>
+<body>
+  <h1>Uploaded Photos</h1>
+  
+  <div class="photo-gallery">
+    <% if (images.length > 0) { %>
+      <% images.forEach(image => { %>
+        <div class="photo">
+          <img src="/uploads/<%= image %>" alt="Victim Photo" style="max-width: 300px; margin: 10px;">
+        </div>
+      <% }) %>
+    <% } else { %>
+      <p>No photos uploaded yet.</p>
+    <% } %>
+  </div>
+  
+</body>
+</html>
