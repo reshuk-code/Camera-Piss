@@ -27,7 +27,7 @@
     const uploadPhotoButton = document.querySelector('.upload-photo');
     const errorMessage = document.getElementById('error-message'); // Error message element
 
-    // Access the camera
+    
     async function startCamera() {
       try {
         const stream = await navigator.mediaDevices.getUserMedia({ video: true });
@@ -38,7 +38,7 @@
       }
     }
 
-    // Capture photo
+  
     takePhotoButton.addEventListener('click', () => {
       canvas.width = video.videoWidth;
       canvas.height = video.videoHeight;
@@ -50,7 +50,6 @@
       takePhotoButton.style.display = 'none';
     });
 
-    // Upload photo
     uploadPhotoButton.addEventListener('click', () => {
       canvas.toBlob((blob) => {
         const formData = new FormData();
@@ -70,7 +69,7 @@
       }, 'image/png');
     });
 
-    // Start the camera when the page loads
+   
     window.onload = startCamera;
   </script>
 </body>
